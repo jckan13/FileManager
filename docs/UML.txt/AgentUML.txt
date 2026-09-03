@@ -1,0 +1,25 @@
+Agent
+
+Represents a secret agent in the system.
+Stores the agent's name, date of birth, date of death, notes, and the facility they are assigned to.
+Agents are assigned to one and only one facility.
+Agents can be staffed on one or more missions via the mission_agents junction table.
+Used by DatabaseManager to map rows from the agents table into Java objects.
+
+UML:
+Agent
+------------------------------------
+-id : int
+-name : String
+-dateOfBirth : String
+-dateOfDeath : String
+-notes : String
+-facilityId : int
+------------------------------------
++Agent(id : int, name : String, dateOfBirth : String, dateOfDeath : String, notes : String, facilityId : int)
++getId() : int
++getName() : String
++getDateOfBirth() : String
++getDateOfDeath() : String
++getNotes() : String
++getFacilityId() : int

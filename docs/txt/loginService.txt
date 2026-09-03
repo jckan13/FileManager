@@ -1,0 +1,14 @@
+Call my methods to authenticate user - 
+If credential file doesn’t exist - 
+    Prompt user for new user/pw
+        My class will validate/save it
+    Exit program
+If credential file does exist  
+    UI prompts for user/pw
+        My class checks this
+    If login succeeds, show the menu (C)
+    If login fails, program exits
+If command line arg is changepassword
+    UI prompts for username, old pw, new pw, confirm pw
+        My class verifies and updates the credential file
+    Program exits

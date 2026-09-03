@@ -1,0 +1,49 @@
+UserInterface
+Purpose:
+Handles all user interaction through the terminal. It prompts users to log in, displays the main menu, and lets users access briefs, agents, facilities, missions, audit logs, and user creation.
+
+Important Methods:
+- start()
+  Starts the program using the real CredentialManager and System.in Scanner.
+
+- start(LoginService loginService, Scanner scanner)
+  Testable version of start(). Allows tests to pass in a fake login service and scanner.
+
+- runMainMenu(Scanner scanner)
+  Displays the main menu and sends the user to the correct submenu.
+
+- runBriefsMenu(Scanner scanner)
+  Lets the user list, read, and add briefs.
+
+- runAgentsMenu(Scanner scanner)
+  Lets the user list, read, and add agents.
+
+- runFacilitiesMenu(Scanner scanner)
+  Lets the user list, read, and add facilities.
+
+- runMissionsMenu(Scanner scanner)
+  Lets the user list, read, and add missions.
+
+- addBriefPrompt(Scanner scanner)
+  Gets brief information from the user and sends it to ProgramControl.
+
+- addAgentPrompt(Scanner scanner)
+  Gets agent information from the user and sends it to ProgramControl.
+
+- addFacilityPrompt(Scanner scanner)
+  Gets facility information from the user and sends it to ProgramControl.
+
+- addMissionPrompt(Scanner scanner)
+  Gets mission information from the user and sends it to ProgramControl.
+
+- showAuditLog()
+  Displays audit log entries from ProgramControl.
+
+- changePassword()
+  Starts the password change flow using the real CredentialManager.
+
+- changePassword(LoginService loginService, Scanner scanner)
+  Testable version of the password change flow.
+
+- addUserPrompt(Scanner scanner)
+  Lets an existing user add a new username.

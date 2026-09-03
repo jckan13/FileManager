@@ -1,0 +1,28 @@
+ UserInterface
++------------------------------+
+|                              |
++------------------------------+
+| + start(): void              |
+| ~ start(LoginService,        |
+|   Scanner): void             |
+| - createNewCredentials(      |
+|   LoginService, Scanner): void|
+| - loginUser(LoginService,    |
+|   Scanner): void             |
+| - createPasswordForNewUser(  |
+|   LoginService, Scanner,     |
+|   String): void              |
+| ~ runMainMenu(Scanner): void |
+| - runBriefsMenu(Scanner): void|
+| - addBriefPrompt(Scanner): void|
+| - runAgentsMenu(Scanner): void|
+| - addAgentPrompt(Scanner): void|
+| - runFacilitiesMenu(Scanner): void|
+| - addFacilityPrompt(Scanner): void|
+| - runMissionsMenu(Scanner): void|
+| - addMissionPrompt(Scanner): void|
+| - showAuditLog(): void       |
+| + changePassword(): void     |
+| ~ changePassword(LoginService,|
+|   Scanner): void             |
+| - addUserPrompt(Scanner): void|

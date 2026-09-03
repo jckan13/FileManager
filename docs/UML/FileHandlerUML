@@ -1,0 +1,14 @@
+FileHandler
+----------------------------
+
+-dataFolder : File
+
+----------------------------
+
++FileHandler()
++FileHandler(dataFolder : File)
++readFileContents(fileName : String)
+
++getAvailableFiles() : ArrayList<String>
+
+----------------------------

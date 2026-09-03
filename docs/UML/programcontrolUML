@@ -1,0 +1,11 @@
+ProgramControl
+-----------------------------------
+
+-MissionRepository repository
+----------------------------
+
++setRepository(repo : MissionRepository) : void
++listMissions() : string
++displayMission(number : String) : string
+
+----------------------------

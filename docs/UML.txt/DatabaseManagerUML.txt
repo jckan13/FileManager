@@ -1,0 +1,55 @@
+DatabaseManager
+-----------------------------------
+The central database access class for the TopSecret system.
+It implements MissionRepository, FacilityRepository, AgentRepository, and AuditLogRepository,
+providing real SQLite-backed data for all entity types.
+
+It manages a single shared connection to the SQLite database and initializes
+five tables on startup: facilities, agents, missions, mission_agents, and audit_log.
+Tables are seeded from TSV files if empty.
+
+Database integrity is enforced on all delete operations:
+- deleteFacility is blocked if any agents or missions still reference it.
+- deleteAgent is blocked if the agent is staffed on any active missions.
+- deleteMission cleans up mission_agents rows before deleting the mission.
+- removeAgentFromMission is blocked if only one agent remains on the mission.
+
+UML:
+DatabaseManager
+implements MissionRepository, FacilityRepository, AgentRepository, AuditLogRepository
+------------------------------------
+-dbUrl : String
+-sharedConnection : Connection
+------------------------------------
++DatabaseManager()
++DatabaseManager(dbPath : String)
++getConnection() : Connection
++initializeDatabase() : void
++getMissionCount() : int
++getFacilityCount() : int
++getAgentCount() : int
++clearMissions() : void
++clearFacilities() : void
++clearAgents() : void
++importMissionsFromTsv(filePath : String) : void
++importFacilitiesFromTsv(filePath : String) : void
++importAgentsFromTSV(filepath : String) : void
++getAllMissions() : List<Mission>
++getMissionById(id : int) : Mission
++getMissionsByFacility(facilityId : int) : List<Mission>
++getAgentsByMission(missionId : int) : List<Agent>
++addMission(title : String, brief : String, date : String, facilityId : int) : void
++addAgentToMission(missionId : int, agentId : int) : void
++removeAgentFromMission(missionId : int, agentId : int) : void
++deleteMission(id : int) : void
++getAllFacilities() : List<Facility>
++getFacilityById(id : int) : Facility
++addFacility(name : String, abbreviation : String) : void
++deleteFacility(id : int) : void
++getAllAgents() : List<Agent>
++getAgentById(id : int) : Agent
++getAgentsByFacility(facilityId : int) : List<Agent>
++addAgent(name : String, dateOfBirth : String, dateOfDeath : String, notes : String, facilityId : int) : void
++deleteAgent(id : int) : void
++logEvent(eventType : String, contentType : String, contentId : int, username : String) : void
++getAuditLog() : List<String>

@@ -1,0 +1,23 @@
+MissionRepository
+
+An interface that defines how the rest of the system accesses mission data.
+It decouples ProgramControl and the UI from the database implementation,
+meaning they do not need to know anything about SQLite.
+
+DatabaseManager implements this interface to provide real data from the SQLite database.
+FakeMissionRepository implements this interface in tests to provide controlled test data.
+
+UML:
+«interface»
+MissionRepository
+------------------------------------
+
+------------------------------------
++getAllMissions() : List<Mission>
++getMissionById(id : int) : Mission
++getMissionsByFacility(facilityId : int) : List<Mission>
++getAgentsByMission(missionId : int) : List<Agent>
++addMission(title : String, brief : String, date : String, facilityId : int) : void
++addAgentToMission(missionId : int, agentId : int) : void
++removeAgentFromMission(missionId : int, agentId : int) : void
++deleteMission(id : int) : void

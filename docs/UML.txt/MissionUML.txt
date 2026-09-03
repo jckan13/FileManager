@@ -1,0 +1,21 @@
+Mission
+
+Represents a single mission brief in the system.
+Stores the mission's title, brief text, date, and the facility that conducted it.
+Used by DatabaseManager to map rows from the missions table into Java objects.
+
+UML:
+Mission
+------------------------------------
+-id : int
+-title : String
+-brief : String
+-date : String
+-facilityId : int
+------------------------------------
++Mission(id : int, title : String, brief : String, date : String, facilityId : int)
++getId() : int
++getTitle() : String
++getBrief() : String
++getDate() : String
++getFacilityId() : int

@@ -1,0 +1,20 @@
+Facility
+
+Represents a facility in the system.
+Stores the facility's name and abbreviation.
+Agents are assigned to one and only one facility.
+Missions are conducted by one and only one facility.
+Used by DatabaseManager to map rows from the facilities table into Java objects.
+
+UML:
+Facility
+------------------------------------
+-id : int
+-name : String
+-abbreviation : String
+------------------------------------
++Facility(id : int, name : String, abbreviation : String)
++getId() : int
++getName() : String
++getAbbreviation() : String
++toString() : String

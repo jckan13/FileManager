@@ -1,0 +1,11 @@
+When a request for a file is received, return the file contents
+Handles all direct access to files
+
+tests -
+Does it work for a file that doesn't exist?
+Does it work for a file that does exist (return a file)?
+Does it work for a file that is empty (empty.txt)?
+Does it work for a file that has multiple lines (fileb.txt)?
+Does it work for a file that can't be read?
+Does it work for a different directory (not "data")?
+

@@ -1,0 +1,51 @@
+HtmlView
+
+Purpose:
+Generates HTML pages for the Top Secret Database web interface.
+Provides methods to build complete web pages and display
+agents, facilities, missions, briefs, and audit logs.
+
+Methods:
+
++ wrapPage(String title, String body): String
+    Combines a page title and HTML body into a complete HTML page.
+
++ homePage(): String
+    Creates the application's home page with navigation links.
+
++ agentsPage(String agentText): String
+    Creates an HTML page displaying agent information.
+
++ facilitiesPage(String facilityText): String
+    Creates an HTML page displaying facility information.
+
++ missionsPage(String missionText): String
+    Creates an HTML page displaying mission information.
+
++ briefsPage(String briefText): String
+    Creates an HTML page displaying brief information.
+
++ auditPage(String auditText): String
+    Creates an HTML page displaying audit log information.
+
+Relationships:
+- Receives formatted data from ProgramControl.
+- Returns HTML strings for use by the web server.
+- Does not directly access repositories or databases.
+
++--------------------------------------+
+              HtmlView
++--------------------------------------+
+|                                      |
++--------------------------------------+
+| + wrapPage(title:String,             |
+|   body:String): String               |
+| + homePage(): String                 |
+| + agentsPage(agentText:String):String|
+| + facilitiesPage(                    |
+|   facilityText:String): String       |
+| + missionsPage(                      |
+|   missionText:String): String        |
+| + briefsPage(briefText:String):String|
+| + auditPage(auditText:String):String |
++--------------------------------------+

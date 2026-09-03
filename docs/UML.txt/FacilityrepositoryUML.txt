@@ -1,0 +1,19 @@
+FacilityRepository
+
+An interface that defines how the rest of the system accesses facility data.
+It decouples ProgramControl and the UI from the database implementation,
+meaning they do not need to know anything about SQLite.
+
+DatabaseManager implements this interface to provide real data from the SQLite database.
+FakeFacilityRepository implements this interface in tests to provide controlled test data.
+
+UML:
+«interface»
+FacilityRepository
+------------------------------------
+
+------------------------------------
++getAllFacilities() : List<Facility>
++getFacilityById(id : int) : Facility
++addFacility(name : String, abbreviation : String) : void
++deleteFacility(id : int) : void

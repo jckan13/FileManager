@@ -1,0 +1,12 @@
+Program Control
+
+This class acts like the "remote" that controls and connects the parts of Top Secret.
+It provides methods that allow the user interface to retrieve available mission briefs
+and display the contents of a selected mission.
+It uses the MissionRepository interface to retrieve mission data from the database.
+It no longer uses FileHandler — missions are now stored in and retrieved from SQLite
+via the MissionRepository interface implemented by DatabaseManager.
+
+- setRepository(MissionRepository repo): sets the database connection
+- listMissions(): returns a numbered list of all mission titles
+- displayMission(String number): returns the title, date, and brief of a selected mission
